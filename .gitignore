@@ -1,2 +1,7 @@
 node_modules/
-npm-debug.log
+*.log
+.idea
+.DS_Store
+*.swp
+*.jsx
+build/
