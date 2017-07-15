@@ -4,15 +4,15 @@ import Component from 'vue-class-component';
 import './token-input.component.scss';
 
 @Component({
-  template: `<div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12">
+  template: `<div class='row'>
+              <form class='col s12'>
+                <div class='row'>
+                  <div class='input-field col s12'>
                     <input 
-                    placeholder="Search" 
-                    class="token-input" 
-                    @keyup="eventSource" 
-                    v-model="token"/>
+                    placeholder='Search' 
+                    class='token-input' 
+                    @keyup='eventSource' 
+                    v-model='token'/>
                   </div>
                 </div>
               </form>

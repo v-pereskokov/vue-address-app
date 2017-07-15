@@ -1,17 +1,17 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
-import { TokenInputComponent } from "../token-input/token-input.component";
-import { SearchResultsComponent } from "../search-results/search-results.component";
-import { LoadingProgressComponent } from "../loading-progress/loading-progress.component";
+import { TokenInputComponent } from '../token-input/token-input.component';
+import { SearchResultsComponent } from '../search-results/search-results.component';
+import { LoadingProgressComponent } from '../loading-progress/loading-progress.component';
 import { addresses } from '../../lib/addresses/index';
 import UserInactivity from '../../../services/UserInactivity/UserInactivity';
 
 @Component({
   template: `
     <div>
-      <token-input @new-token="handleToken"></token-input>
-      <loading-progress :is-render="preloaderData"></loading-progress>
-      <search-results :my-message="messageData"></search-results>
+      <token-input @new-token='handleToken'></token-input>
+      <loading-progress :is-render='preloaderData'></loading-progress>
+      <search-results :my-message='messageData'></search-results>
     </div>
   `,
   components: {
