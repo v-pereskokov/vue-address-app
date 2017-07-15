@@ -4,6 +4,7 @@ import { TokenInputComponent } from "../token-input/token-input.component";
 import { SearchResultsComponent } from "../search-results/search-results.component";
 import { LoadingProgressComponent } from "../loading-progress/loading-progress.component";
 import {addresses} from '../../lib/addresses/index';
+import UserInactivity from '../../services/UserInactivity/UserInactivity';
 
 
 @Component({
@@ -25,13 +26,14 @@ export class AppComponent extends Vue {
   public isPreloader: boolean = false;
   private oldToken: string = '';
 
-  public async handleToken(value: string) {
-    this.isPreloader = true;
-
+  public handleToken(value: string) {
     const data: string = value.trim();
 
     if (data.length > 3 && this.oldToken !== data) {
-      this.message = await addresses.getAddressByToken(data);
+      UserInactivity.checkInactivity(async () => {
+        this.isPreloader = true;
+        this.message = await addresses.getAddressByToken(data);
+      });
     }
 
     this.oldToken = data;

@@ -1,12 +1,12 @@
 export default class UserInactivity {
-  private timerID: number = 0;
-  private waitTime: number = 1380;
+  private static timerID: number = 0;
+  private static waitTime: number = 1380;
 
-  public checkInactivity(callback: any) {
-    clearTimeout(this.timerID);
+  public static checkInactivity(callback: any) {
+    clearTimeout(UserInactivity.timerID);
 
-    this.timerID = window.setTimeout(() => {
+    UserInactivity.timerID = window.setTimeout(() => {
       callback();
-    }, this.waitTime);
+    }, UserInactivity.waitTime);
   }
 }
