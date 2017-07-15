@@ -3,9 +3,8 @@ import Component from 'vue-class-component';
 import { TokenInputComponent } from "../token-input/token-input.component";
 import { SearchResultsComponent } from "../search-results/search-results.component";
 import { LoadingProgressComponent } from "../loading-progress/loading-progress.component";
-import {addresses} from '../../lib/addresses/index';
+import { addresses } from '../../lib/addresses/index';
 import UserInactivity from '../../services/UserInactivity/UserInactivity';
-
 
 @Component({
   template: `
@@ -32,12 +31,14 @@ export class AppComponent extends Vue {
     if (data.length > 3 && this.oldToken !== data) {
       UserInactivity.checkInactivity(async () => {
         this.isPreloader = true;
+
         this.message = await addresses.getAddressByToken(data);
+
+        this.isPreloader = false;
       });
     }
 
     this.oldToken = data;
-    this.isPreloader = false;
   }
 
   get messageData() {
