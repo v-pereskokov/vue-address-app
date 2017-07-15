@@ -4,7 +4,7 @@ import { TokenInputComponent } from "../token-input/token-input.component";
 import { SearchResultsComponent } from "../search-results/search-results.component";
 import { LoadingProgressComponent } from "../loading-progress/loading-progress.component";
 import { addresses } from '../../lib/addresses/index';
-import UserInactivity from '../../services/UserInactivity/UserInactivity';
+import UserInactivity from '../../../services/UserInactivity/UserInactivity';
 
 @Component({
   template: `
