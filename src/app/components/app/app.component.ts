@@ -32,10 +32,9 @@ export class AppComponent extends Vue {
 
     if (data.length > 3 && this.oldToken !== data) {
       this.message = await addresses.getAddressByToken(data);
-
-      this.oldToken = data;
     }
 
+    this.oldToken = data;
     this.isPreloader = false;
   }
 
