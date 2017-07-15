@@ -23,14 +23,17 @@ import {addresses} from '../../lib/addresses/index';
 export class AppComponent extends Vue {
   public message: string = '';
   public isPreloader: boolean = false;
+  private oldToken: string = '';
 
   public async handleToken(value: string) {
     this.isPreloader = true;
 
     const data: string = value.trim();
 
-    if (data.length > 3) {
+    if (data.length > 3 && this.oldToken !== data) {
       this.message = await addresses.getAddressByToken(data);
+
+      this.oldToken = data;
     }
 
     this.isPreloader = false;
