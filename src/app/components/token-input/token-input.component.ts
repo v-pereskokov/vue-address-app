@@ -1,6 +1,5 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
-import { addresses } from '../../lib/addresses';
 
 import './token-input.component.scss';
 
@@ -22,13 +21,8 @@ import './token-input.component.scss';
 export class TokenInputComponent extends Vue {
   public token: string = '';
 
-  public async eventSource() {
-    const data: string = this.tokenData;
-    if (data.trim().length > 3) {
-      const address: string = await addresses.getAddressByToken(data);
-
-      this.$emit('new-token', address);
-    }
+  public eventSource() {
+    this.$emit('new-token', this.tokenData);
   }
 
   get tokenData() {
