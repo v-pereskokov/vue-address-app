@@ -24,7 +24,7 @@ export class TokenInputComponent extends Vue {
 
   public async eventSource() {
     const data: string = this.tokenData;
-    if (data.trim().length === 3) {
+    if (data.trim().length > 3) {
       const address: string = await addresses.getAddressByToken(data);
 
       this.$emit('new-token', address);
