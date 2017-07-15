@@ -8,16 +8,22 @@ import { LoadingProgressComponent } from "../loading-progress/loading-progress.c
 @Component({
   template: `
     <div>
-      <token-input></token-input>
+      <token-input @new-token="handleToken"></token-input>
       <loading-progress></loading-progress>
-      <search-results></search-results>
+      <search-results :my-message="msg"></search-results>
     </div>
   `,
   components: {
     'token-input': TokenInputComponent,
     'loading-progress': LoadingProgressComponent,
     'search-results': SearchResultsComponent,
-  },
+  }
 })
 export class AppComponent extends Vue {
+  public msg: string = '';
+
+  public handleToken(value: string) {
+    console.log(value);
+    this.msg = value;
+  }
 }

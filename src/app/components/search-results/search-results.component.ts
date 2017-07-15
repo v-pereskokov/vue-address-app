@@ -3,7 +3,10 @@ import Component from 'vue-class-component';
 
 
 @Component({
-  template: '<div>...</div>',
+  template: '<div>sdfsaf: {{ myMessage }}</div>',
+  props: {
+    myMessage: String
+  }
 })
 export class SearchResultsComponent extends Vue {
 }

@@ -9,18 +9,24 @@ import './token-input.component.scss';
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s12">
-                    <input placeholder="Search" class="token-input" @keyup="eventSource" v-model="token" />
+                    <input placeholder="Search" class="token-input" @keyup="eventSource" v-model="token"/>
                   </div>
                 </div>
               </form>
-            </div>`,
+            </div>`
 })
 export class TokenInputComponent extends Vue {
   public token: string = '';
 
   public async eventSource() {
-    const data = await addresses.getAddressByToken('abc');
-    console.log(data);
+    this.$emit('new-token', this.tokenData);
+
+    // const data = await addresses.getAddressByToken('abc');
+    // console.log(data);
+  }
+
+  get tokenData() {
+    return this.token;
   }
 
 }
