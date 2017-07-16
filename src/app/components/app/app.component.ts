@@ -6,6 +6,7 @@ import {HeaderComponent} from '../header/header.component';
 import {TokenInputComponent} from '../token-input/token-input.component';
 import {SearchResultsComponent} from '../search-results/search-results.component';
 import {LoadingProgressComponent} from '../loading-progress/loading-progress.component';
+import {GoogleMapsButtonComponent} from '../google-maps-button/google-maps-button.component';
 import {addresses} from '../../lib/addresses/index';
 import UserInactivity from '../../../services/UserInactivity/UserInactivity';
 
@@ -18,6 +19,7 @@ import UserInactivity from '../../../services/UserInactivity/UserInactivity';
         <token-input @new-token='handleToken'></token-input>
         <loading-progress :is-render='preloaderData'></loading-progress>
         <search-results :my-message='messageData'></search-results>
+        <google-maps-button></google-maps-button>
       </main-window>
     </div>
   `,
@@ -28,6 +30,7 @@ import UserInactivity from '../../../services/UserInactivity/UserInactivity';
     'token-input': TokenInputComponent,
     'loading-progress': LoadingProgressComponent,
     'search-results': SearchResultsComponent,
+    'google-maps-button': GoogleMapsButtonComponent
   }
 })
 export class AppComponent extends Vue {

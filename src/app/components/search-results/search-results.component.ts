@@ -17,5 +17,4 @@ import './search-results.component.scss';
   }
 })
 export class SearchResultsComponent extends Vue {
-  public myMessage: string = 'Result field';
 }
