@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/src/build",
-    publicPath: '/build/',
+    publicPath: 'build/',
     filename: '[name].js',
   },
   devtool: "cheap-eval-source-map",
