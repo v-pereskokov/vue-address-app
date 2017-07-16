@@ -5,6 +5,7 @@
   ],
   "jsRules": {},
   "rules": {
+    "no-unused-expression": false,
     "quotemark": [
       true,
       "single",
@@ -30,11 +31,13 @@
     ],
     "object-literal-sort-keys": false,
     "variable-name": false,
-    "no-console": false,
+    "no-console": true,
     "max-line-length": [
       true,
       200
-    ]
+    ],
+    "arrow-parens": false,
+    "member-ordering": false
   },
   "rulesDirectory": []
 }
