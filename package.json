@@ -7,8 +7,9 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --inline --port 3200 --content-base ./src",
-    "webpackDEV": "webpack --config webpack.config.js",
-    "server": "node server/server.js"
+    "webpack": "webpack --config webpack.config.js",
+    "server": "node server/server.js",
+    "codeStyle": "./node_modules/tslint/bin/tslint -c tslint.json 'src/**/*.ts' -e 'src/app/lib/**/*.ts'"
   },
   "keywords": [],
   "devDependencies": {
@@ -22,6 +23,7 @@
     "sass-loader": "^5.0.1",
     "scss-loader": "0.0.1",
     "style-loader": "^0.13.1",
+    "tslint": "^5.5.0",
     "typescript": "^2.4.1",
     "vue": "^2.2.6",
     "vue-class-component": "^5.0.1",

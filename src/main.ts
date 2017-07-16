@@ -1,5 +1,5 @@
 import * as Vue from 'vue';
-import { AppComponent } from "./app/components/app/app.component";
+import { AppComponent } from './app/components/app/app.component';
 
 /**
  * start app when page is ready
