@@ -10,10 +10,7 @@ import './main-window.component.scss';
                    <slot></slot>
                   </div>
                </div>
-             </div>`,
-  props: {
-    myMessage: String
-  }
+             </div>`
 })
 export class MainWindowComponent extends Vue {
 }
