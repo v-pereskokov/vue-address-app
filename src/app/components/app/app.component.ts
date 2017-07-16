@@ -16,7 +16,7 @@ import UserInactivity from '../../../services/UserInactivity/UserInactivity';
       <background></background>
       <main-window>
         <header-component></header-component>
-        <google-maps-button></google-maps-button>
+        <google-maps-button :address='messageData'></google-maps-button>
         <token-input @new-token='handleToken'></token-input>
         <loading-progress :is-render='preloaderData'></loading-progress>
         <search-results :my-message='messageData'></search-results>
