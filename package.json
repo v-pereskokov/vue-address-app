@@ -7,8 +7,9 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --inline --port 3200 --content-base ./src",
-    "webpackDEV": "webpack --config webpack.config.js",
-    "server": "node server/server.js"
+    "webpack": "webpack --config webpack.config.js",
+    "server": "node server/server.js",
+    "codeStyle": "./node_modules/tslint/bin/tslint -c tslint.json 'src/**/*.ts' -e 'src/app/lib/**/*.ts'"
   },
   "keywords": [],
   "devDependencies": {
