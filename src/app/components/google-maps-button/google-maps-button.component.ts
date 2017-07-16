@@ -26,6 +26,6 @@ export class GoogleMapsButtonComponent extends Vue {
   }
 
   public get googleAddress() {
-    return `https://www.google.com/${this.addressData}`;
+    return `https://www.google.ru/maps/place/${this.addressData.replace(/ /g, '+')}`;
   }
 }
