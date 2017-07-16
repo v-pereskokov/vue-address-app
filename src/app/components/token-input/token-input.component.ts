@@ -1,8 +1,6 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
 
-import './token-input.component.scss';
-
 @Component({
   template: `<div class='row'>
               <div class='col s12'>

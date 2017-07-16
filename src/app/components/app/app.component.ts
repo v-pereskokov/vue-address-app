@@ -14,6 +14,9 @@ import './app.component.scss';
     <div>
       <div class="background"></div>
       <main-window>
+        <div class="header__wrapper">
+          <p class="header__text">Find address by token</p>
+        </div>
         <token-input @new-token='handleToken'></token-input>
         <loading-progress :is-render='preloaderData'></loading-progress>
         <search-results :my-message='messageData'></search-results>
