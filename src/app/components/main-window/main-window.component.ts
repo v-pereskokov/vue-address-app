@@ -5,8 +5,8 @@ import './main-window.component.scss';
 
 @Component({
   template: `<div>
-               <div class="parent">
-                 <div class="block">
+               <div class='parent'>
+                 <div class='block'>
                    <slot></slot>
                   </div>
                </div>

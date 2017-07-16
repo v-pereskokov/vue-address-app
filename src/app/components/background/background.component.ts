@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import './background.component.scss';
 
 @Component({
-  template: `<div class="background"></div>`
+  template: `<div class='background'></div>`
 })
 export class BackgroundComponent extends Vue {
 }
