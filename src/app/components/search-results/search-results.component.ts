@@ -7,7 +7,7 @@ import './search-results.component.scss';
   template: `<ul class="collection">
               <li class="collection-item">
                 <span class="title">{{ myMessage }}</span>
-                <a href="#!" class="secondary-content">
+                <a class="secondary-content">
                   <i class="material-icons icon icon__color">location_on</i>
                 </a>
               </li>
