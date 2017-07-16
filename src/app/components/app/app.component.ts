@@ -1,6 +1,7 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
 import {MainWindowComponent} from '../main-window/main-window.component';
+import {HeaderComponent} from '../header/header.component';
 import {TokenInputComponent} from '../token-input/token-input.component';
 import {SearchResultsComponent} from '../search-results/search-results.component';
 import {LoadingProgressComponent} from '../loading-progress/loading-progress.component';
@@ -14,9 +15,7 @@ import './app.component.scss';
     <div>
       <div class="background"></div>
       <main-window>
-        <div class="header__wrapper">
-          <p class="header__text">Find address by token</p>
-        </div>
+        <header-component></header-component>
         <token-input @new-token='handleToken'></token-input>
         <loading-progress :is-render='preloaderData'></loading-progress>
         <search-results :my-message='messageData'></search-results>
@@ -25,6 +24,7 @@ import './app.component.scss';
   `,
   components: {
     'main-window': MainWindowComponent,
+    'header-component': HeaderComponent,
     'token-input': TokenInputComponent,
     'loading-progress': LoadingProgressComponent,
     'search-results': SearchResultsComponent,
