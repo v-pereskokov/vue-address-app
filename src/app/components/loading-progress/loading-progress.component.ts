@@ -1,9 +1,11 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
 
+import './loading-progress.component.scss';
+
 @Component({
-  template: `<div class='preloader-wrapper small active' v-if='isRenderData'>
-                <div class='spinner-layer spinner-green-only'>
+  template: `<div class='preloader-wrapper small active progress-bar' v-if='isRenderData'>
+                <div class='spinner-layer progress__color-green'>
                   <div class='circle-clipper left'>
                     <div class='circle'></div>
                   </div><div class='gap-patch'>
