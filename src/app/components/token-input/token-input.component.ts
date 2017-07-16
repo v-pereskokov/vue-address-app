@@ -5,17 +5,16 @@ import './token-input.component.scss';
 
 @Component({
   template: `<div class='row'>
-              <form class='col s12'>
+              <div class='col s12'>
                 <div class='row'>
                   <div class='input-field col s12'>
                     <input 
-                    placeholder='Search' 
-                    class='token-input' 
+                    placeholder='Search address' 
                     @keyup='eventSource' 
                     v-model='token'/>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>`
 })
 export class TokenInputComponent extends Vue {
