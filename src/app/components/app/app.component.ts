@@ -1,6 +1,7 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
 import {MainWindowComponent} from '../main-window/main-window.component';
+import {BackgroundComponent} from '../background/background.component';
 import {HeaderComponent} from '../header/header.component';
 import {TokenInputComponent} from '../token-input/token-input.component';
 import {SearchResultsComponent} from '../search-results/search-results.component';
@@ -8,12 +9,10 @@ import {LoadingProgressComponent} from '../loading-progress/loading-progress.com
 import {addresses} from '../../lib/addresses/index';
 import UserInactivity from '../../../services/UserInactivity/UserInactivity';
 
-import './app.component.scss';
-
 @Component({
   template: `
     <div>
-      <div class="background"></div>
+      <background></background>
       <main-window>
         <header-component></header-component>
         <token-input @new-token='handleToken'></token-input>
@@ -24,6 +23,7 @@ import './app.component.scss';
   `,
   components: {
     'main-window': MainWindowComponent,
+    'background': BackgroundComponent,
     'header-component': HeaderComponent,
     'token-input': TokenInputComponent,
     'loading-progress': LoadingProgressComponent,
