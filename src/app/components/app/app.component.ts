@@ -28,9 +28,6 @@ export class AppComponent extends Vue {
   public handleToken(value: string) {
     const data: string = value.trim();
 
-    console.log('\n');
-    console.log('old: ' + this.oldToken);
-    console.log('data: ' + data);
     if (data.length > 3 && this.oldToken !== data) {
       UserInactivity.checkInactivity(async () => {
         this.isPreloader = true;
@@ -38,7 +35,6 @@ export class AppComponent extends Vue {
         this.message = await addresses.getAddressByToken(data);
 
         this.oldToken = data;
-        console.log('new old: ' + this.oldToken);
         this.isPreloader = false;
       });
     } else {
