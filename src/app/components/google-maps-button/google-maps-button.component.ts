@@ -5,10 +5,10 @@ import './google-maps-button.component.scss';
 
 @Component({
   template: `<div class="button__wrapper">
-              <button class="btn waves-effect waves-light button__position" type="submit" name="action">
-              Go to Google Maps  
+              <a href="https://www.google.com" target="_blank" class="waves-effect waves-light btn button__position">
                 <i class="material-icons right">send</i>
-              </button>
+                Go to Google Maps
+              </a>
             </div>`
 })
 export class GoogleMapsButtonComponent extends Vue {
