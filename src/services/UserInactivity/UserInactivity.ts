@@ -9,4 +9,8 @@ export default class UserInactivity {
       callback();
     }, UserInactivity.waitTime);
   }
+
+  public static timerId() {
+    return UserInactivity.timerID;
+  }
 }

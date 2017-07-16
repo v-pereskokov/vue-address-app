@@ -1,9 +1,9 @@
 import * as Vue from 'vue';
 import Component from 'vue-class-component';
-import { TokenInputComponent } from '../token-input/token-input.component';
-import { SearchResultsComponent } from '../search-results/search-results.component';
-import { LoadingProgressComponent } from '../loading-progress/loading-progress.component';
-import { addresses } from '../../lib/addresses/index';
+import {TokenInputComponent} from '../token-input/token-input.component';
+import {SearchResultsComponent} from '../search-results/search-results.component';
+import {LoadingProgressComponent} from '../loading-progress/loading-progress.component';
+import {addresses} from '../../lib/addresses/index';
 import UserInactivity from '../../../services/UserInactivity/UserInactivity';
 
 @Component({
@@ -28,17 +28,22 @@ export class AppComponent extends Vue {
   public handleToken(value: string) {
     const data: string = value.trim();
 
+    console.log('\n');
+    console.log('old: ' + this.oldToken);
+    console.log('data: ' + data);
     if (data.length > 3 && this.oldToken !== data) {
       UserInactivity.checkInactivity(async () => {
         this.isPreloader = true;
 
         this.message = await addresses.getAddressByToken(data);
 
+        this.oldToken = data;
+        console.log('new old: ' + this.oldToken);
         this.isPreloader = false;
       });
+    } else {
+      clearTimeout(UserInactivity.timerId());
     }
-
-    this.oldToken = data;
   }
 
   get messageData() {
